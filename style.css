@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@300;400;800&display=swap');
+
+/* 
+-------------------------------------------------------------------------------- 
+VARIABLES, HTML & BODY
+-------------------------------------------------------------------------------- 
+*/
+
+:root {
+  --bglight: #272C47;
+  --bgdark: #0A0B12;
+  --candle: #EDCD7A;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans';
+  font-size: 3em;
+  text-align: center;
+  color: white;
+  background-color: var(--bgdark);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* 
+-------------------------------------------------------------------------------- 
+GENERAL
+-------------------------------------------------------------------------------- 
+*/
+
+
+/* 
+-------------------------------------------------------------------------------- 
+TITLE SCREEN - DESKTOP
+-------------------------------------------------------------------------------- 
+*/
+
+#titleDesktop {
+  background: linear-gradient(185deg, var(--bglight) 20%, var(--bgdark) 70%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100%;
+}
+
+#bookTitleAuthor {
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#bookTitleAuthor div { 
+  position: relative; 
+  margin: 0; padding: 0;
+}
+
+#bookTitle {
+  bottom: 0.7em;
+  left: 0.7em;
+  display: block;
+}
+#bookTitle svg {
+  position: relative;
+  height: 4.8em;
+  width: auto;
+  bottom: 0;
+  left: 0;
+}
+
+#seperator {
+  bottom: 0.7em;
+  left: 1.2em;
+}
+#seperator svg { height: 4.8em; }
+
+#bookAuthor {
+  position: relative;
+  bottom: 0.7em;
+  width: 5em;
+  height: 4.8em;
+  left: 1.8em;
+}
+#bookAuthor svg {
+  position: absolute;
+  height: 1.5em;
+  width: auto;
+  bottom: 0;
+  left: 0;
+}
+
+#credits {
+  position: absolute;
+  bottom: 0.7em;
+  width: 5em;
+  height: 4.8em;
+  right: 0.7em;
+}
+#credits svg {
+  position: absolute;
+  height: 4em;
+  width: auto;
+  bottom: -0.65em;
+  right: -0.65em;  
+}
+
+@-webkit-keyframes cageOscillate {
+  from { transform: rotate(5deg) translateX(-5vw); }
+  to   { transform: rotate(-5deg) translateX(5vw); }
+}
+
+@keyframes cageOscillate {
+  from { transform: rotate(5deg) translateX(-5vw); }
+  to   { transform: rotate(-5deg) translateX(5vw); }
+}
+
+#cage {
+  position: absolute;
+  width: 100%;
+}
+#cage svg {
+  position: relative;
+  height: 80vh;
+  top: 0;
+  left: 10vw;
+  animation: 
+    cageOscillate 7.347354s ease-in-out infinite alternate;
+  -webkit-animation: 
+    cageOscillate 7.347354s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes spotlight {
+  from { transform: rotate(-10deg) translateY(0vh); }
+  to   { transform: rotate(20deg) translateY(-20vh); }
+}
+
+@keyframes spotlight {
+  from { transform: rotate(-10deg) translateY(0vh); }
+  to   { transform: rotate(20deg) translateY(-20vh); }
+}
+
+@-webkit-keyframes moveLight {
+  from { transform: translateX(2vw); }
+  to   { transform: translateX(-15vw); }
+}
+
+@keyframes moveLight {
+  from { transform: translateX(2vw); }
+  to   { transform: translateX(-15vw); }
+}
+
+@-webkit-keyframes lightOpacity {
+  from { opacity: 100%; }
+  to   { opacity: 80%; }
+}
+
+@keyframes lightOpacity {
+  from { opacity: 100%; }
+  to   { opacity: 80%; }
+}
+
+#light {
+  position: absolute;
+  width: 100%;
+  animation: 
+    spotlight 5.11725s ease-in-out infinite alternate,
+    moveLight 9.465637s ease-in-out infinite alternate,
+    lightOpacity 10.8883s ease-in-out infinite alternate;
+  -webkit-animation: 
+    spotlight 5.11725s ease-in-out infinite alternate,  
+    moveLight 9.465637s ease-in-out infinite alternate,
+    lightOpacity 10.8883s ease-in-out infinite alternate;
+}
+#light svg {
+  position: absolute;
+  width: auto;
+  height: 110vh;
+  top: -10vh;
+  left: 25vw; 
+}
+
+/* 
+-------------------------------------------------------------------------------- 
+CONTENT SECTION - DESKTOP
+-------------------------------------------------------------------------------- 
+*/
+
+.section, .theme, #header {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.sectionTitle, .themeTitle {
+  position: relative;
+  width: 100%;
+  height: 15%;
+  left: 3%;
+  top: 5%;
+} 
+.sectionTitle svg, .themeTitle svg {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  left: 0;
+}
+
+.sectionDesc, .themeDesc {
+  position: absolute;
+  width: 100%;
+  bottom: 5%;
+} 
+.sectionDesc p, .themeDesc p {
+  position: absolute;
+  font-size: 0.4em;
+  width: 70%;
+  text-align: right;
+  right: 3%;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  text-shadow: 0 0 0.3em black, 0 0 0.7em black, 0 0 1.1em black;
+}
+.sectionDesc img {
+  position: absolute;
+  width: 15%;
+  left: 3%;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* 
+-------------------------------------------------------------------------------- 
+THEME LIST - DESKTOP
+-------------------------------------------------------------------------------- 
+*/
+
+.themeTitle { height: 25%; }
+.themeDesc p { text-align: left; left: 3%; width: 45%; font-size: 0.5em; }
+
+.header {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.header div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.header div svg {
+  width: 50%;
+  position: relative;
+  width: 100%;  
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header img {
+  position: absolute;
+  width: 15%;
+  left: 3%;
+  bottom: 3%;
+  padding: 0;
+  margin: 0;
+}
+
+.header p {
+  font-size: 0.4em;
+  bottom: 0.4em;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  text-shadow: 0 0 0.3em black, 0 0 0.7em black, 0 0 1.1em black;
+}
+
+/* 
+-------------------------------------------------------------------------------- 
+RESPONSIVE - DESKTOP
+-------------------------------------------------------------------------------- 
+*/
+
+@media (max-width: 1500px) {
+  body { font-size: 3em; }
+  #cage svg { height: 80vh; left: 15%; }
+  #light svg { left: 25%; }
+}
+
+@media (max-width: 1200px) {
+  body { font-size: 2.5em; }
+  #cage svg { left: 15%; height: 70vh; }
+  #light svg { top: -10vh; left: 30%; height: 100vh; }
+}
+
+@media (max-width: 950px) {
+  body { font-size: 2em; }
+  #cage svg { left: 0%; height: 65vh; }
+  #light svg { top: -5vh; left: 0; height: 90vh; }
+
+  .sectionTitle { height: 12%; } .themeTitle { height: 20%; }
+  .sectionDesc p { font-size: 0.5em; width: 60%; } 
+  .themeDesc p { font-size: 0.7em; width: 60%; }
+  .sectionDesc img { width: 20%; }
+}
+
+@media (max-width: 768px) {
+  body { font-size: 1.5em; }
+  #cage svg { left: 0%; height: 70vh; }
+  #light svg { top: -5vh; left: -20%; height: 100vh; }
+
+  .sectionTitle { height: 10%; } .themeTitle { height: 18%; }
+  .sectionDesc p { font-size: 0.7em; width: 50%; } 
+  .themeDesc p { font-size: 0.9em; width: 50%; }
+  .sectionDesc img { width: 25%; }
+}
+
+@media (max-width: 570px) {
+  body { font-size: 1.3em; }
+  #cage svg { left: 0%; height: 70vh; }
+  #light svg { top: -5vh; left: -40%; height: 100vh; }
+}
+
+/* 
+--------------------------------------------------------------------------------
+MOBILE STUFF
+--------------------------------------------------------------------------------
+*/
+
+#titleMobile { display: none !important;  }
+#titleDesktop { display: block !important; }
+
+/* 
+-------------------------------------------------------------------------------- 
+TITLE SCREEN - MOBILE
+-------------------------------------------------------------------------------- 
+*/
+
+#titleMobile {
+  background: linear-gradient(185deg, var(--bglight) 20%, var(--bgdark) 70%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+#cageM {
+  position: absolute;
+  top: -10vh;
+  width: 100%;
+}
+#cageM svg {
+  width: 60%;
+}
+
+#lightM {
+  position: absolute;
+  top: -22vh;
+}
+#lightM svg {
+  position: relative;
+  width: 100%;
+  left: 0;
+}
+
+#bookTitleAuthorM {
+  position: absolute;
+  top: 55vh;
+}
+#bookTitleAuthorM svg {
+  position: relative;
+  width: 90%;
+  left: 0;  
+}
+
+#creditsM {
+  position: absolute;
+  bottom: -5vw;
+  width: 100%;
+}
+#creditsM svg {
+  position: relative;
+  width: 90vw;
+  left: 0;  
+}
+
+/* 
+-------------------------------------------------------------------------------- 
+RESPONSIVE - MOBILE
+-------------------------------------------------------------------------------- 
+*/
+
+@media (max-width: 480px) {
+  #titleDesktop { display: none !important; }
+  #titleMobile { display: block !important; }
+  #bookTitleAuthorM { top: 65vh; } 
+  #creditsM { bottom: 0vw; }
+}
+
+@media (max-width: 400px) {
+  #cageM { top: -25vh; }
+  #cageM svg { width: 55%; }
+  #lightM { top: -45vh; }
+  #lightM svg { left: 0; } 
+  #bookTitleAuthorM { top: 62vh; }  
+  #creditsM { bottom: -2vw; }
+}
+
+@media (max-width: 300px) {
+  #cageM { top: -30vh; }
+  #cageM svg { width: 65%; }
+  #lightM { top: -50vh; }
+  #lightM svg { left: 0; } 
+  #bookTitleAuthorM { top: 55vh; } 
+}
